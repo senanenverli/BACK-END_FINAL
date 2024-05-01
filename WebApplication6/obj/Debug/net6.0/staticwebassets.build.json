@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wv9RcH793BTXbVvO5RoOz+wvcD+Z+QeC0eBnC37Mdk8=",
+  "Hash": "gOSKOddSq6Pnc1GWb1wRzNSjE6HX1FzuA4v7MoSgWfM=",
   "Source": "WebApplication6",
   "BasePath": "_content/WebApplication6",
   "Mode": "Default",
@@ -4233,6 +4233,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\brands\\336b9604-3ea9-4ae1-87a4-3585e895dbd2-Screenshot 2024-02-08 155203.png"
     },
     {
+      "Identity": "C:\\Users\\elekb\\Downloads\\New folder\\WebApplication6\\WebApplication6\\wwwroot\\assets\\images\\brands\\3999b97d-8380-4568-81ff-59728e05b65a-download.png",
+      "SourceId": "WebApplication6",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\elekb\\Downloads\\New folder\\WebApplication6\\WebApplication6\\wwwroot\\",
+      "BasePath": "_content/WebApplication6",
+      "RelativePath": "assets/images/brands/3999b97d-8380-4568-81ff-59728e05b65a-download.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\brands\\3999b97d-8380-4568-81ff-59728e05b65a-download.png"
+    },
+    {
       "Identity": "C:\\Users\\elekb\\Downloads\\New folder\\WebApplication6\\WebApplication6\\wwwroot\\assets\\images\\brands\\4.png",
       "SourceId": "WebApplication6",
       "SourceType": "Discovered",
@@ -4639,6 +4656,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\images\\categories\\8a9c0004-ea91-440d-ba09-43ef7e31c00a-Image 10.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\elekb\\Downloads\\New folder\\WebApplication6\\WebApplication6\\wwwroot\\assets\\images\\categories\\8b56ed1a-d55d-44c0-816e-f3c778f1ca9c-c8ff2dcbde69ad50aed8c4a53b585d9c-3317171800_2_4_0.jpg",
+      "SourceId": "WebApplication6",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\elekb\\Downloads\\New folder\\WebApplication6\\WebApplication6\\wwwroot\\",
+      "BasePath": "_content/WebApplication6",
+      "RelativePath": "assets/images/categories/8b56ed1a-d55d-44c0-816e-f3c778f1ca9c-c8ff2dcbde69ad50aed8c4a53b585d9c-3317171800_2_4_0.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\categories\\8b56ed1a-d55d-44c0-816e-f3c778f1ca9c-c8ff2dcbde69ad50aed8c4a53b585d9c-3317171800_2_4_0.jpg"
     },
     {
       "Identity": "C:\\Users\\elekb\\Downloads\\New folder\\WebApplication6\\WebApplication6\\wwwroot\\assets\\images\\categories\\90b95911-2652-4a4a-a293-dd80c48bd099-Image 10.jpg",
@@ -54211,6 +54245,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\images\\shop\\banner2.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\elekb\\Downloads\\New folder\\WebApplication6\\WebApplication6\\wwwroot\\assets\\images\\shop\\cdc408b3-bc5d-4a46-adb2-739eb257449d-D_slide_man_jackets_-1.jpg",
+      "SourceId": "WebApplication6",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\elekb\\Downloads\\New folder\\WebApplication6\\WebApplication6\\wwwroot\\",
+      "BasePath": "_content/WebApplication6",
+      "RelativePath": "assets/images/shop/cdc408b3-bc5d-4a46-adb2-739eb257449d-D_slide_man_jackets_-1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\shop\\cdc408b3-bc5d-4a46-adb2-739eb257449d-D_slide_man_jackets_-1.jpg"
     },
     {
       "Identity": "C:\\Users\\elekb\\Downloads\\New folder\\WebApplication6\\WebApplication6\\wwwroot\\assets\\images\\shop\\d681188d-f613-486c-b5b9-accadb20896e-Screenshot 2023-10-31 154106.png",

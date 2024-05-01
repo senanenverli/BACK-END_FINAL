@@ -75,7 +75,7 @@ public class BlogsController : Controller
         };
         await _context.Blogs.AddAsync(newblog);
         await _context.SaveChangesAsync();
-        return RedirectToAction("Index");
+        return RedirectToAction(nameof(Index));
     }
     [Authorize(Roles = "Admin")]
     public async Task<IActionResult> Delete(int id)
@@ -110,7 +110,7 @@ public class BlogsController : Controller
 
         blog.isDeleted = true;
         await _context.SaveChangesAsync();
-        return RedirectToAction("Index");
+        return RedirectToAction(nameof(Index));
     }
     public async Task<IActionResult> Detail(int id)
     {
@@ -162,13 +162,13 @@ public class BlogsController : Controller
         {
             if (blog.PosterImage.CheckFileSize(3000))
             {
-                ModelState.AddModelError("Image", "Image size is too big");
+                ModelState.AddModelError("Image", "sekilin olcusu hedden artiqdir");
                 return View();
             }
 
             if (!blog.PosterImage.CheckFileType("image/"))
             {
-                ModelState.AddModelError("Image", "Only images are allowed");
+                ModelState.AddModelError("Image", "sadece sekil olmalidir");
                 return View();
             }
 

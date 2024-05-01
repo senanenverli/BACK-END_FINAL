@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using WebApplication6.Areas.Admin.ViewModels;
 
 namespace WebApplication6.Areas.Admin.Controllers;
 
@@ -84,37 +85,77 @@ public class UsersController : Controller
         return RedirectToAction("Index", "Users");
 
     }
+	[Authorize(Roles = "Admin")]
+	public async Task<IActionResult> Deactive(string id)
+	{
+		var user = await _userManager.FindByNameAsync(id);
 
-    //public async Task<IActionResult> UpdateRole(string id)
-    //{
-    //    ViewBag.AllRoles = await _roleManager.Roles.ToListAsync();
+		if (user == null)
+		{
+			return NotFound();
+		}
+		return View(user);
+	}
 
-    //    var user = await _userManager.FindByNameAsync(id);
-    //    var roles = await _userManager.GetRolesAsync(user);
+	[HttpPost]
+	[Authorize(Roles = "Admin")]
+	[ActionName("Deactive")]
+	public async Task<IActionResult> DeactiveOrActiveUser(string id)
+	{
+		var user = await _userManager.FindByNameAsync(id);
+		if (user == null)
+		{
+			return NotFound();
+		}
+		if (user.IsActive)
+		{
+			user.IsActive = false;
+		}
+		else
+		{
+			user.IsActive = true;
+		}
+		await _context.SaveChangesAsync();
+		return RedirectToAction("Index", "Users");
 
-    //    if (user == null)
-    //    {
-    //        return NotFound();
-    //    }
+	}
 
-    //    UserViewModel model = new()
-    //    {
-    //        User = user,
-    //        Roles = roles
-    //    };
+	public async Task<IActionResult> UserUpdateRole(string id)
+	{
+		ViewBag.AllRoles = await _roleManager.Roles.ToListAsync();
 
-    //    return View(model);
-    //}
+		var user = await _userManager.FindByNameAsync(id);
+		var roles = await _userManager.GetRolesAsync(user);
 
+		if (user == null)
+		{
+			return NotFound();
+		}
 
-    //[HttpPost]
-    //public async Task<IActionResult> UpdateRole(string id, UserUpdateViewModel model)
-    //{
-    //    var user = await _userManager.FindByNameAsync(id);
-    //    UserViewModel users = new();
+		UserViewModel model = new()
+		{
+			User = user,
+			Roles = roles
+		};
 
-    //    await _context.SaveChangesAsync();
+		return View(model);
+	}
 
-    //    return RedirectToAction(nameof(Index));
-    //}
+	[HttpPost]
+	public async Task<IActionResult> UserUpdateRole(string id, UserRoleUpdateViewModel model)
+	{
+		var user = await _userManager.FindByNameAsync(id);
+		UserViewModel users = new();
+		var roles = await _userManager.GetRolesAsync(user);
+		if (roles == null) { return NotFound(); }
+		await _userManager.RemoveFromRolesAsync(user, roles);
+		foreach (var item in model.Roles)
+		{
+			await _userManager.AddToRoleAsync(user, item);
+		}
+		await _context.SaveChangesAsync();
+		return RedirectToAction(nameof(Index));
+	}
 }
+
+

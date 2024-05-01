@@ -1,4 +1,4 @@
-﻿@{
+﻿﻿@{
 	Layout = null;
 }
 
@@ -131,13 +131,13 @@
 						</div>
 
 						<!-- End of Cart Product -->
-						@foreach (var item Model.BasketItems)
+						@foreach (var basketItems in Model.BasketItems)
 						{
 							<div class="products scrollable">
 								<div class="product product-cart">
 									<figure class="product-media">
 										<a href="product.html">
-											<img src="~/assets/images/cart/product-1.jpg" alt="product" width="80"
+											<img src="~/assets/images/shop/@basketItems.Product.PosterImage" alt="product" width="80"
 												 height="88" />
 										</a>
 										<button class="btn btn-link btn-close">
@@ -145,10 +145,10 @@
 										</button>
 									</figure>
 									<div class="product-detail">
-										<a href="product.html" class="product-name">Riode White Trends</a>
+										<a href="product.html" class="product-name">@basketItems.Product.Brand</a>
 										<div class="price-box">
 											<span class="product-quantity">1</span>
-											<span class="product-price">$21.00</span>
+											<span class="product-price">$@basketItems.Product.Price</span>
 										</div>
 									</div>
 

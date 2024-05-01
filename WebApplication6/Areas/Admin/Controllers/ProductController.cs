@@ -89,7 +89,7 @@ public class ProductController : Controller
 
         await _context.Products.AddAsync(newproduct);
         await _context.SaveChangesAsync();
-        return RedirectToAction("Index");
+        return RedirectToAction(nameof(Index));
     }
     [Authorize(Roles = "Admin")]
     public async Task<IActionResult> Delete(int id)
@@ -230,6 +230,6 @@ public class ProductController : Controller
         updateProduct.UpdatedDate = DateTime.UtcNow;
 
         await _context.SaveChangesAsync();
-        return RedirectToAction("Index");
+        return RedirectToAction(nameof(Index));
     }
 }

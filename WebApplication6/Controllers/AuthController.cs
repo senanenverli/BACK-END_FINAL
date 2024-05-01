@@ -51,20 +51,20 @@ public class AuthController : Controller
             user = await _userManager.FindByEmailAsync(model.UsernameOrEmail);
             if (user == null)
             {
-                ModelState.AddModelError("", "Username-Email or Password is incorrect ");
+                ModelState.AddModelError("", "istifadeci adi ve ya email yanlisdir");
                 return View();
             }
         }
         if (!await _userManager.IsEmailConfirmedAsync(user))
         {
-            ModelState.AddModelError("", "confirm your email address");
+            ModelState.AddModelError("", "email adresinizi tesdiqleyin");
             return View(model);
         }
 
         var signInResault = await _signInManager.PasswordSignInAsync(user.UserName, model.Password, model.RememberMe, false);
         if (!signInResault.Succeeded)
         {
-            ModelState.AddModelError("", "Username-Email or Password incorrect");
+            ModelState.AddModelError("", "istifadeci adi ve ya email yanlisdir");
             return View();
         }
 
@@ -94,7 +94,7 @@ public class AuthController : Controller
         var user = await _userManager.FindByEmailAsync(forgotPasswordViewModel.Email);
         if (user == null)
         {
-            ModelState.AddModelError("Email", "Email not found");
+            ModelState.AddModelError("Email", "tapilmadi");
             return View();
         }
 
@@ -157,7 +157,7 @@ public class AuthController : Controller
         IdentityResult identityResult = await _userManager.ConfirmEmailAsync(user, model.Token);
         if (identityResult.Succeeded)
         {
-            TempData["ConfirmationMessage"] = "confirmed";
+            TempData["ConfirmationMessage"] = "tesdiqlendi get";
             return RedirectToAction(nameof(Login));
         }
 

@@ -46,7 +46,7 @@ public class BrandController : Controller
         }
         if (brand.Image.CheckFileSize(3000))
         {
-            ModelState.AddModelError("Image", "Too Big!");
+            ModelState.AddModelError("Image", "sekilin olcusunu azaldin!");
             return View();
         }
         if (!brand.Image.CheckFileType("image/"))
@@ -69,7 +69,7 @@ public class BrandController : Controller
         };
         await _context.Brands.AddAsync(newbrand);
         await _context.SaveChangesAsync();
-        return RedirectToAction("Index");
+        return RedirectToAction(nameof(Index));
     }
     [Authorize(Roles = "Admin")]
     public async Task<IActionResult> Delete(int id)
@@ -104,7 +104,7 @@ public class BrandController : Controller
 
         brand.isDeleted = true;
         await _context.SaveChangesAsync();
-        return RedirectToAction("Index");
+        return RedirectToAction(nameof(Index));
     }
     public async Task<IActionResult> Detail(int id)
     {
@@ -149,13 +149,13 @@ public class BrandController : Controller
         {
             if (brand.Image.CheckFileSize(3000))
             {
-                ModelState.AddModelError("Image", "Image size is too big");
+                ModelState.AddModelError("Image", "sekilin olcusunu azaldin!");
                 return View();
             }
 
             if (!brand.Image.CheckFileType("image/"))
             {
-                ModelState.AddModelError("Image", "Only images are allowed");
+                ModelState.AddModelError("Image", "ancaq sekil olmalidir");
                 return View();
             }
 

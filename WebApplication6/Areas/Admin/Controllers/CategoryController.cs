@@ -44,12 +44,12 @@ public class CategoryController : Controller
         }
         if (category.Image.CheckFileSize(3000))
         {
-            ModelState.AddModelError("Image", "too big");
+            ModelState.AddModelError("Image", "kokelifsen");
             return View();
         }
         if (!category.Image.CheckFileType("image/"))
         {
-            ModelState.AddModelError("Image", "Only images are allowed");
+            ModelState.AddModelError("Image", "alinmirsa diresme");
             return View();
         }
         string fileName = $"{Guid.NewGuid()}-{category.Image.FileName}";
@@ -67,7 +67,7 @@ public class CategoryController : Controller
         };
         await _context.Categories.AddAsync(newcategory);
         await _context.SaveChangesAsync();
-        return RedirectToAction("Index");
+        return RedirectToAction(nameof(Index));
     }
     [Authorize(Roles = "Admin")]
     public async Task<IActionResult> Delete(int id)
@@ -148,13 +148,13 @@ public class CategoryController : Controller
         {
             if (category.Image.CheckFileSize(3000))
             {
-                ModelState.AddModelError("Image", "Image size is too big");
+                ModelState.AddModelError("Image", "sekil olcusu hedden artiqdir");
                 return View();
             }
 
             if (!category.Image.CheckFileType("image/"))
             {
-                ModelState.AddModelError("Image", "Only images are allowed");
+                ModelState.AddModelError("Image", "sadece sekil olmalidir");
                 return View();
             }
 

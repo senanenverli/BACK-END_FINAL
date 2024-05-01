@@ -12,24 +12,31 @@ public class HeaderViewComponent : ViewComponent
 	private readonly RioDbContext _context;
 	private readonly UserManager<AppUser> _userManager;
 
-	public HeaderViewComponent(RioDbContext context)
+	public HeaderViewComponent(RioDbContext context, UserManager<AppUser> userManager)
 	{
 		_context = context;
+		_userManager = userManager;
 	}
 
 	public async Task<IViewComponentResult> InvokeAsync()
 	{
+		var headerModel = new HeaderViewModel();
 		var user = await _userManager.FindByNameAsync(User.Identity.Name);
 		var settings = await _context.Settings.ToDictionaryAsync(x => x.Key, x => x.Value);
-		var basketItems = await _context.BasketItems.Where(b => b.AppUserId == user.Id).ToListAsync();
-
-		HeaderViewModel headerViewModel = new HeaderViewModel
+		var basketItems = await _context.BasketItems.Include(p=> p.Product).Where(b => b.AppUserId == user.Id).ToListAsync();
+		if (basketItems != null)
 		{
-			Settings = settings,
-			BasketItems = basketItems,
+			HeaderViewModel headerViewModel = new HeaderViewModel
+			{
+				Settings = settings,
+				BasketItems = basketItems,
 
-		};
+			};
 
-		return View(settings);
+			return View(headerViewModel);
+		}
+
+		return View(headerModel);
+
 	}
 }

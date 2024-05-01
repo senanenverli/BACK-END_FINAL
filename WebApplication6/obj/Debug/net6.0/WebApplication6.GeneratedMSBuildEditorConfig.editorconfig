@@ -112,8 +112,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlcnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/elekb/Downloads/New folder/WebApplication6/WebApplication6/Areas/Admin/Views/Users/UpdateRole.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlcnNcVXBkYXRlUm9sZS5jc2h0bWw=
+[C:/Users/elekb/Downloads/New folder/WebApplication6/WebApplication6/Areas/Admin/Views/Users/UserUpdateRole.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlcnNcVXNlclVwZGF0ZVJvbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/elekb/Downloads/New folder/WebApplication6/WebApplication6/Areas/Admin/Views/_ViewImports.cshtml]
